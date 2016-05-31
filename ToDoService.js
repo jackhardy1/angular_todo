@@ -18,5 +18,5 @@ toDoApp.service('ToDoService', ['$http', 'ToDoFactory', function($http, ToDoFact
     data.forEach(function(toDoData) {
       toDos.push(new ToDoFactory(toDoData.text, toDoData.completed));
     });
-  }
+  };
 }]);
