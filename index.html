@@ -10,8 +10,11 @@
   <body>
     <div ng-controller="ToDoController as controller">
       <li ng-repeat="todo in controller.todos">
-        <p>{{todo.task}}: {{todo.completed}}
+        <p>{{todo.task}}: {{todo.completed}}</p>
+        <input type="button" ng-click="controller.removeToDo($index)" value="Remove" />
       </li>
+      <input type="text" ng-model="taskName"/>
+      <input type="button" ng-click="controller.addToDo(taskName)" value="Add"/>
     </div>
   </body>
 </html>
