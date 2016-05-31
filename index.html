@@ -4,14 +4,17 @@
     <meta charset="utf-8">
     <title>Fangular App</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="controllers.js"></script>
     <script type="text/javascript" src="ToDoFactory.js"></script>
+    <script type="text/javascript" src="ToDoService.js"></script>
   </head>
   <body>
     <div ng-controller="ToDoController as controller">
-      <li ng-repeat="todo in controller.todos">
-        <p>{{todo.task}}: {{todo.completed}}</p>
+      <li ng-repeat="toDo in controller.toDos">
+        <p>{{toDo.task}}: {{toDo.completed}}</p>
+        <input type="button" ng-click="toDo.complete()" value="Complete"/>
         <input type="button" ng-click="controller.removeToDo($index)" value="Remove" />
       </li>
       <input type="text" ng-model="taskName"/>
