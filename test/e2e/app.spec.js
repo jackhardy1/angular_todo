@@ -11,9 +11,16 @@ describe("Todos tracker", function(){
     browser.get('/');
     it("adds a todo to list", function(){
       $('input').sendKeys('ToDo3');
-      $('button').click();
+      $('#add-todo').click();
       var todoList = element.all(by.repeater('todo in controller.todos'));
       expect(todoList.get(2).getText()).toEqual("Name: ToDo3, Complete: false");
     });
+  });
+
+  it('can remove a ToDo', function() {
+    browser.get('/');
+    var todos = $$('#todos');
+    $('#remove-todo').click();
+    expect(todos.count()).toEqual(1);
   });
 });

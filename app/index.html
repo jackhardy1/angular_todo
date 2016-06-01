@@ -8,12 +8,12 @@
     <title></title>
   </head>
   <body>
-    <div id="todo" ng-controller="ToDoController as controller">
+    <div id="todos" ng-controller="ToDoController as controller">
       <li ng-repeat="todo in controller.todos">
         Name: {{ todo.name }}, Complete: {{ todo.complete }}
       </li>
       <input type="text" ng-model="todoText">
-      <button ng-click="controller.addToDo(todoText);">Add a ToDo</button>
+      <button id="add-todo" ng-click="controller.addToDo(todoText);">Add a ToDo</button>
+      <button id="remove-todo" ng-click="controller.removeToDo();">Remove last ToDo</button>
     </div>
-  </body>
 </html>

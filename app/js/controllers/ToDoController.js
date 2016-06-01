@@ -9,4 +9,9 @@ toDoApp.controller('ToDoController', [function() {
   self.addToDo = function(todoText) {
     self.todos.push({name: todoText, complete: false});
   };
+
+  self.removeToDo = function() {
+    self.todos.pop();
+  };
+
 }]);
