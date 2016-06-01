@@ -12,6 +12,8 @@
       <li ng-repeat="todo in controller.todos">
         Name: {{ todo.name }}, Complete: {{ todo.complete }}
       </li>
+      <input type="text" ng-model="todoText">
+      <button ng-click="controller.addToDo(todoText);">Add a ToDo</button>
     </div>
   </body>
 </html>

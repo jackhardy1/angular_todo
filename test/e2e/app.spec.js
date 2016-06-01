@@ -13,7 +13,7 @@ describe("Todos tracker", function(){
       $('input').sendKeys('ToDo3');
       $('button').click();
       var todoList = element.all(by.repeater('todo in controller.todos'));
-      expect(todoList.get(2).getText()).toEqual("Name: ToDo2, Complete: false");
+      expect(todoList.get(2).getText()).toEqual("Name: ToDo3, Complete: false");
     });
   });
 });
