@@ -3,7 +3,8 @@
   "description": "to-do app",
   "main": "index.js",
   "authors": [
-    "Michael Harrison <harrim91@hotmail.co.uk>"
+    "Michael Harrison <harrim91@hotmail.co.uk>",
+    "Jack Hardy <jackhardy1@gmail.com>"
   ],
   "license": "ISC",
   "homepage": "https://github.com/harrim91/angular-intro",
