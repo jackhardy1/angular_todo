@@ -4,6 +4,9 @@
   "description": "to-do app",
   "main": "index.js",
   "scripts": {
+    "start": "cd app && ../node_modules/http-server/bin/http-server",
+    "webdriver-manager": "./node_modules/protractor/bin/webdriver-manager",
+    "protractor": "./node_modules/protractor/bin/protractor",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +20,11 @@
   },
   "homepage": "https://github.com/harrim91/angular-intro#readme",
   "devDependencies": {
-    "bower": "^1.7.9"
+    "bower": "^1.7.9",
+    "jasmine-spec-reporter": "^2.4.0"
+  },
+  "dependencies": {
+    "http-server": "^0.9.0",
+    "protractor": "^3.3.0"
   }
 }
