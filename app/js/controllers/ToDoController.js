@@ -1,3 +1,3 @@
 toDoApp.controller('ToDoController', [function() {
-  this.todo = 'ToDo1';
+  this.todos = ['ToDo1','ToDo2'];
 }]);
