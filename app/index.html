@@ -10,7 +10,7 @@
   <body>
     <div id="todo" ng-controller="ToDoController as controller">
       <li ng-repeat="todo in controller.todos">
-        {{ todo }}
+        Name: {{ todo.name }}, Complete: {{ todo.complete }}
       </li>
     </div>
   </body>

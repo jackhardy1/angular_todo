@@ -8,6 +8,15 @@ describe('ToDoController', function() {
   }));
 
   it('initializes with two todos', function() {
-    expect(ctrl.todos).toEqual(['ToDo1', 'ToDo2']);
+    expect(ctrl.todos.length).toEqual(2);
   });
+
+  it('todos have a name', function() {
+    expect(ctrl.todos[0].name).toEqual('ToDo1');
+  });
+
+  it('todos have a complete status', function() {
+    expect(ctrl.todos[0].complete).toEqual(false);
+  });
+
 });
