@@ -1,6 +1,7 @@
-describe("app", function(){
-  it("should have hello world on the homepage", function(){
+describe("Todos tracker", function(){
+  it("has a todo", function(){
     browser.get('/');
-    expect($$("p").first().getText()).toEqual("Hello world");
+    var todo = $('#todo');
+    expect(todo.getText()).toEqual("ToDo1");
   });
 });
