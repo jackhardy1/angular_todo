@@ -1,0 +1,20 @@
+{
+  "name": "angular-intro",
+  "description": "to-do app",
+  "main": "index.js",
+  "authors": [
+    "Michael Harrison <harrim91@hotmail.co.uk>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/harrim91/angular-intro",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.6"
+  }
+}
