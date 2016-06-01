@@ -1,0 +1,20 @@
+{
+  "name": "angular_todo_app",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jack Hardy <jackhardy1@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jackhardy1/angular_todo_app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.6"
+  }
+}
