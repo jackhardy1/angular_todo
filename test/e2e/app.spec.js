@@ -1,10 +1,24 @@
 describe("Todos tracker", function(){
 
+  var mock = require('protractor-http-mock');
+
+  beforeEach(function(){
+    mock([{
+      request: {
+        path:'http://quiet-beach-24792.herokuapp.com/todos.json',
+        method: 'GET'
+      },
+      response: {
+        data: [{text: "ToDo1", completed: true}, {text: "ToDo2", completed: false}]
+      }
+    }]);
+  });
+
   it("has two todos", function(){
     browser.get('/');
     var todoList = element.all(by.repeater('todo in controller.todos'));
-    expect(todoList.get(0).getText()).toMatch("Name: ToDo1, Completed: false");
-    expect(todoList.get(1).getText()).toMatch("Name: ToDo2, Completed: true");
+    expect(todoList.get(0).getText()).toMatch("Name: ToDo1, Completed: true");
+    expect(todoList.get(1).getText()).toMatch("Name: ToDo2, Completed: false");
   });
 
   describe("adding a todo", function(){
@@ -28,7 +42,11 @@ describe("Todos tracker", function(){
     browser.get('/');
     var todo = $$('#todos').last();
     todo.element(by.css('.complete')).click();
-    expect(todo.getText()).toMatch("Name: ToDo2, Completed: true");
+    expect(todo.getText()).toMatch("Name: ToDo2, Completed: false");
+  });
+
+  afterEach(function(){
+    mock.teardown();
   });
 
 });
