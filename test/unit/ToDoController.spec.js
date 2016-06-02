@@ -1,10 +1,11 @@
 describe('ToDoController', function() {
   beforeEach(module('toDoApp'));
 
-  var ctrl;
+  var ctrl, ToDoFactory;
 
-  beforeEach(inject(function($controller) {
+  beforeEach(inject(function($controller, _ToDoFactory_) {
     ctrl = $controller('ToDoController');
+    ToDoFactory = _ToDoFactory_;
   }));
 
   it('initializes with two todos', function() {
@@ -12,17 +13,17 @@ describe('ToDoController', function() {
   });
 
   it('todos have a name', function() {
-    expect(ctrl.todos[0].name).toEqual('ToDo1');
+    expect(ctrl.todos[0].text).toEqual('ToDo1');
   });
 
   it('todos have a complete status', function() {
-    expect(ctrl.todos[0].complete).toEqual(false);
+    expect(ctrl.todos[0].completed).toEqual(false);
   });
 
-  // it('adds a new todo', function() {
-  //   ctrl.addToDo('NewTodo');
-  //   var todo = {text: "NewTodo", completed: false};
-  //   expect(ctrl.todos.pop()).toEqual(todo);
-  // });
+  it('adds a new todo', function() {
+    ctrl.addToDo('NewTodo');
+    var todo = new ToDoFactory("NewTodo");
+    expect(ctrl.todos.pop()).toEqual(todo);
+  });
 
 });
